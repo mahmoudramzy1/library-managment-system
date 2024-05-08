@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Home Page</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet"href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+	
+</head>
+<style>
+    
+
+    .login-container {
+        width: 300px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 50px auto; /* Adjust the margin to center the login box */
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] ,
+    input[type="register"]
+    {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] ,
+    input[type="register"]
+    {
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    input[type="register"]:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+	<div th:insert="fragments/header :: header"></div>
+	<div class="login-container">
+		<h3>Login</h3>
+			
+						<form action="#" th:action="@{/Login-user}" th:object="${login}" method="post">
+							
+								
+									<input type="text" th:field="*{userName}" class="form-control" id="name" placeholder="Username" />
+                                    <input type="password" name="*{password}" class="form-control" id="password" placeholder="Password" />
+                                    <input type="submit" value="Login">
+                                    <input type="button" value="Register">
+							
+						</form>
+				
+	</div>
+<div th:insert="fragments/footer :: footer"></div>
+</body>
+</html>
